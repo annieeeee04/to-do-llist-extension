@@ -1,0 +1,596 @@
+/* Whole app background + centering */
+.app-container {
+  min-height: 100vh;
+  padding: 40px 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: #f5f5f9;
+  display: flex;
+  justify-content: center; /* center card horizontally */
+  align-items: flex-start; /* card starts a bit below top */
+}
+
+/* Page layout */
+.today-page {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 28px 28px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.page-title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Mood selector */
+.mood-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.mood-button {
+  font-size: 24px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.08s ease,
+    border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.mood-button:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.5);
+}
+
+.mood-button-active {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+/* Task list */
+.task-list-wrapper {
+  margin-top: 4px;
+}
+
+.task-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+.task-add-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+.task-add-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+}
+
+.task-add-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(79, 70, 229, 0.35);
+}
+
+.task-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: #f9fafb;
+  margin-bottom: 6px;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-text {
+  font-size: 14px;
+  color: #111827;
+}
+
+.task-text-done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 14px;
+  border-radius: 999px;
+  padding: 2px 6px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.task-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.06);
+  color: #ef4444;
+}
+
+.task-empty-state {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* Journal */
+.journal-textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.journal-textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+/* Save button */
+.save-button {
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+.save-button:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+}
+
+.save-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Weekly report */
+.weekly-section {
+  margin-top: 28px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 14px;
+}
+
+.weekly-subtitle {
+  margin: 4px 0 10px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.weekly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weekly-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weekly-day-label {
+  width: 60px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.weekly-bar-wrapper {
+  flex: 1;
+}
+
+.weekly-bar-bg {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.weekly-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #4f46e5;
+  transition: width 0.2s ease;
+}
+
+.weekly-count {
+  width: 60px;
+  font-size: 12px;
+  text-align: right;
+  color: #374151;
+}
+
+.weekly-count-unit {
+  color: #9ca3af;
+}
+
+/* Layout: left main card + right sidebar */
+.today-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+/* Left column already styled as .today-page – keep existing styles */
+
+/* Right column */
+.today-sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sidebar-number {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.sidebar-label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.sidebar-small {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+/* Small horizontal progress bar */
+.sidebar-progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.sidebar-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f46e5, #a855f7);
+}
+
+/* Vertical weekly bar chart */
+.weekly-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.weekly-chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.weekly-chart-bar {
+  width: 16px;
+  height: 80px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.weekly-chart-bar-inner {
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+}
+
+.weekly-chart-label {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.weekly-chart-count {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.chat-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  
+  .chat-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .chat-toggle input {
+    cursor: pointer;
+  }
+  
+  .chat-toggle-label {
+    user-select: none;
+  }
+  
+  /* Chat window */
+  .chat-window {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .chat-bubble {
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  
+  .chat-bubble-user {
+    align-self: flex-end;
+    background: #4f46e5;
+    color: white;
+  }
+  
+  .chat-bubble-ai {
+    align-self: flex-start;
+    background: #f3f4f6;
+    color: #111827;
+  }
+  
+  /* Input row */
+  .chat-input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  
+  .chat-input {
+    flex: 1;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    padding: 6px 10px;
+    font-size: 13px;
+    outline: none;
+  }
+  
+  .chat-input:focus {
+    border-color: #4f46e5;
+  }
+  
+  .chat-send-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #4f46e5;
+    color: white;
+  }
+  
+  .chat-send-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  
+  .chat-crisis-note {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #9ca3af;
+  }
+  
+  .journal-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px 14px 14px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  }
+  
+  .journal-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .journal-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 2px;
+  }
+  
+  .journal-subtitle {
+    margin: 0;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  
+  .journal-counter {
+    font-size: 11px;
+    color: #9ca3af;
+  }
+  
+  .journal-counter-warn {
+    color: #f97316;
+  }
+  
+  .journal-prompts-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .journal-chip {
+    border: none;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    background: #f3f4ff;
+    color: #4f46e5;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.05s ease;
+  }
+  
+  .journal-chip:hover {
+    background: #e0e7ff;
+  }
+  
+  .journal-chip:active {
+    transform: scale(0.97);
+  }
+  
+  .journal-textarea {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 8px 10px;
+    font-size: 13px;
+    resize: vertical;
+    outline: none;
+    min-height: 100px;
+  }
+  
+  .journal-textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.15);
+  }
+  
+  .journal-footer-note {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #9ca3af;
+  }
+
+  .sidebar-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .goal-edit {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #9ca3af;
+  }
+  
+  .goal-label {
+    font-size: 11px;
+  }
+  
+  .goal-input {
+    width: 44px;
+    padding: 2px 4px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    font-size: 11px;
+    text-align: center;
+    outline: none;
+  }
+  
+  .goal-input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.15);
+  }
+  

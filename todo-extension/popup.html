@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="title">
+          Todo🎀👩🏻‍💻
+          <span class="title-badge">Today</span>
+        </div>
+        <div class="subtitle">Quick tasks from anywhere in your browser.</div>
+      </div>
+      <!-- optional: you can move this button here if you want it in the header
+      <button id="open-tab">Open in new tab</button>
+      -->
+    </div>
+
+    <div class="input-row">
+      <input id="new-task" type="text" placeholder="Add a new task..." />
+      <button id="add-btn">
+        <span id="add-btn-icon">＋</span>
+        <span>Add</span>
+      </button>
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <div id="empty-state" class="empty-state" style="display: none;">
+      No tasks yet. Add something you want to get done ✨
+    </div>
+  </div>
+
+  <button id="open-tab">Open in new tab</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
